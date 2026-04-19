@@ -1,7 +1,7 @@
 import "./index.css";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import Auth from "./pages/Auth";
-import Dashboard from "./pages/Dashboard";
+import Auth from "./pages/auth.tsx";
+import Dashboard from "./pages/dashboard.tsx";
 
 export default function App() {
   return (

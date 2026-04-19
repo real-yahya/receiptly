@@ -13,7 +13,7 @@ export default function Auth() {
   const [password, setPassword] = useState("");
   const [isLogin, setIsLogin] = useState(true);
 
-  async function signInWithEmail(e: Event) {
+  async function signInWithEmail(e: React.SubmitEvent<HTMLFormElement>) {
     e.preventDefault();
     setLoading(true);
     const { data, error } = await supabase.auth.signInWithPassword({
@@ -31,7 +31,7 @@ export default function Auth() {
     setPassword("");
   }
 
-  async function signUpNewUser(e: Event) {
+  async function signUpNewUser(e: React.SubmitEvent<HTMLFormElement>) {
     e.preventDefault();
     setLoading(true);
     const { data, error } = await supabase.auth.signUp({
