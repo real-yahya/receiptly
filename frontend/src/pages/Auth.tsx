@@ -1,20 +1,13 @@
 import { useState } from "react";
-import { createClient } from "@supabase/supabase-js";
 import { Link, Outlet, useNavigate } from "react-router-dom";
-
-const supabase = createClient(
-  import.meta.env.VITE_SUPABASE_URL,
-  import.meta.env.VITE_SUPABASE_PUBLISHABLE_KEY,
-);
-
-
+import { supabase } from "../lib/supabase"
 
 export default function AuthLayout(){
     return(
         <>
             <div className="flex items-center justify-center h-screen">
                 <div className="border-2 rounded-sm flex flex-col px-4 py-8 gap-6">
-                <Outlet/>
+                    <Outlet/>
                 </div>
             </div>
         </>
@@ -61,6 +54,7 @@ export function SignUp() {
             >
               <input
                 className="w-[80%] border-2 opacity-50 rounded-sm px-2 py-0.5"
+                name="name"
                 type="name"
                 placeholder="Full Name"
                 value={fullName}
@@ -69,6 +63,7 @@ export function SignUp() {
               />
               <input
                 className="w-[80%] border-2 opacity-50 rounded-sm px-2 py-0.5"
+                name="email"
                 type="email"
                 placeholder="Your Email"
                 value={email}
@@ -77,6 +72,7 @@ export function SignUp() {
               />
               <input
                 className="w-[80%] border-2 opacity-50 rounded-sm px-2 py-0.5"
+                name="password"
                 type="password"
                 placeholder="Password"
                 value={password}
@@ -134,6 +130,7 @@ export function LogIn(){
             >
               <input
                 className="w-[80%] border-2 opacity-50 rounded-sm px-2 py-0.5"
+                name="email"
                 type="email"
                 placeholder="Your Email"
                 value={email}
@@ -142,6 +139,7 @@ export function LogIn(){
               />
               <input
                 className="w-[80%] border-2 opacity-50 rounded-sm px-2 py-0.5"
+                name="password"
                 type="password"
                 placeholder="Password"
                 value={password}

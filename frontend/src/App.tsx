@@ -1,8 +1,7 @@
 import "./index.css";
 import { BrowserRouter, Route, Routes, Navigate } from "react-router-dom";
-import AuthLayout from "./pages/auth.tsx";
-import {SignUp,LogIn} from "./pages/auth.tsx";
-import Dashboard from "./pages/dashboard.tsx";
+import AuthLayout, {SignUp,LogIn} from "./pages/auth";
+import Dashboard from "./pages/dashboard";
 
 export default function App() {
   return (
